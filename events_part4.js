@@ -34,10 +34,10 @@ const patoEventsPart4 = [
     },
     {
         "id": 344, "era": 2, "title": "Piesek urzędu skarbowego",
-        "desc": "Urząd Skarbowy wchodzi ci na konta za nieodliczone trasy z ostatnich 5 lat. Decyzja jest natychmiastowa - zajmują ci WSZYSTKIE ŚRODKI na koncie, co do grosza.",
+        "desc": "Urząd Skarbowy wchodzi ci na konta za nieodliczone trasy z ostatnich 5 lat. Decyzja jest natychmiastowa - zajmują ci potężne środki.",
         "options": [
-            { "text": "Krzycz o niesprawiedliwości, tracąc wszystko co masz", "effects": { "Kasa": -99999999, "Odklejka": 20, "Hype": 15, "StreetCred": 10 } },
-            { "text": "Zapłać bez gadania i zacznij od zera", "effects": { "Kasa": -99999999, "Respekt": 10 } }
+            { "text": "Krzycz o niesprawiedliwości", "effects": { "Kasa": -10000, "Odklejka": 20, "Hype": 15, "StreetCred": 10 } },
+            { "text": "Zapłać bez gadania", "effects": { "Kasa": -10000, "Respekt": 10 } }
         ]
     },
     {

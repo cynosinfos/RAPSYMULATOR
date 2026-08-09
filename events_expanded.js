@@ -771,7 +771,7 @@ const expandedEvents = [
         "id": 328,
         "era": 3,
         "title": "Nie nagram dla ciebie featu (2013)",
-        "desc": "Mniej znany raper (Tomb) publicznie wypytuje cię o wspólną zwrotkę, naciskając zbyt mocno w internecie.",
+        "desc": "Mniej znany raper (POMP) publicznie wypytuje cię o wspólną zwrotkę, naciskając zbyt mocno w internecie.",
         "options": [
             {
                 "text": "Zniszcz go bezlitosnym utworem przypominającym muzyczny list odmowny",

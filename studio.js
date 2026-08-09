@@ -69,14 +69,6 @@ function processRelease(type) {
         return;
     }
 
-    if (gameState.label !== "Brak (Niezależny)" && type !== "singiel" && Math.random() < 0.15) {
-        alert("DZWONIŁ MANAGER WYTWÓRNI, NIE WYDA TEJ PŁYTY BO TO KOMPLETNE GÓWNO, MÓWI, ŻEBYŚ NAGRAŁ COŚ INNEGO ALBO SPIERDALAŁ.");
-        gameState.wena -= 10;
-        applyEffects({ Odklejka: 5, Wena: -10 });
-        if (typeof updateStatsUI === 'function') updateStatsUI();
-        return;
-    }
-
     gameState.wena -= costs[type].wena;
     gameState.money -= costs[type].money;
     
@@ -280,6 +272,28 @@ function renderPromoSelection(type) {
 }
 
 function finalizeRelease(type, promo) {
+    const eventWindow = document.getElementById('event-window');
+    const actionButtons = document.getElementById('action-buttons');
+
+    if (gameState.label !== "Brak (Niezależny)" && type !== "singiel" && Math.random() < 0.15) {
+        eventWindow.innerHTML = `
+            <h2 style="color:var(--accent-red);">🚨 ODRZUT Z WYTWÓRNI 🚨</h2>
+            <p>DZWONIŁ MANAGER WYTWÓRNI, NIE WYDA TEJ PŁYTY BO TO KOMPLETNE GÓWNO, MÓWI, ŻEBYŚ NAGRAŁ COŚ INNEGO ALBO SPIERDALAŁ.</p>
+            <p>Kasa wydana na studio i promo przepadła.</p>
+        `;
+        actionButtons.innerHTML = '';
+        
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'btn-action';
+        nextBtn.innerText = "Zrozumiałem (Koniec tury)";
+        nextBtn.onclick = () => {
+            applyEffects({ Odklejka: 5, Wena: -10 });
+            nextTurn();
+        };
+        actionButtons.appendChild(nextBtn);
+        return;
+    }
+
     let moneyGain = 0;
     let hypeGain = 0;
     let fameGain = 0;

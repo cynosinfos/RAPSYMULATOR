@@ -263,10 +263,6 @@ function applyEffects(effects) {
         }
         
         chg = Math.round(chg);
-        if (chg < 0 && gameState.money + chg < 0) {
-            chg = -gameState.money; // Nie możesz stracić więcej niż masz
-        }
-        
         gameState.money += chg;
     }
 
@@ -343,53 +339,9 @@ function checkEndings() {
     return null; // Brak zakończenia
 }
 
-function showEnding(text) {
-    gameState.currentEventRender = null; // Czyszczenie
-    
-    // Tworzymy kontener, który będzie screenshotowany
-    const contentHtml = `
-        <div id="ending-summary" style="padding:20px; background:#111; border: 2px solid var(--accent-red); color: white; margin-bottom:15px; position:relative;">
-            <h2 style="color:var(--accent-red); font-family:'Sedgwick Ave', cursive;">KONIEC KARIERY</h2>
-            <p style="font-size:16px;">${text}</p>
-            <hr style="border:1px solid #333; margin:15px 0;">
-            <h3>Podsumowanie "${gameState.nickname}"</h3>
-            <ul style="list-style:none; padding:0; font-size:14px; color:#ccc;">
-                <li>Zakończyłeś w roku: <strong>${gameState.year}</strong> (Wiek: ${gameState.age})</li>
-                <li>Zgromadzona Kasa: <strong style="color:var(--accent-green)">${gameState.money} PLN</strong></li>
-                <li>Status: <strong>${getTierName(calculateTier())}</strong></li>
-                <li>Fejm: ${Math.round(gameState.fame)}% | Street Credit: ${Math.round(gameState.streetCredit)}%</li>
-                <li>Odklejka: ${Math.round(gameState.odklejka)}%</li>
-            </ul>
-        </div>
-    `;
-
-    document.getElementById('event-window').innerHTML = contentHtml;
-    
-    const actionContainer = document.getElementById('action-buttons');
-    actionContainer.innerHTML = '';
-    
-    const dlBtn = document.createElement('button');
-    dlBtn.className = 'btn-action';
-    dlBtn.innerText = "📸 Pobierz Statystyki (Karta)";
-    dlBtn.onclick = () => {
-        dlBtn.innerText = "Generowanie...";
-        const targetElement = document.getElementById('ending-summary');
-        html2canvas(targetElement, { backgroundColor: '#111' }).then(canvas => {
-            const link = document.createElement('a');
-            link.download = `kariera_${gameState.nickname.replace(/\\s+/g, '_')}.png`;
-            link.href = canvas.toDataURL();
-            link.click();
-            dlBtn.innerText = "📸 Pobierz ponownie";
-        });
-    };
-    actionContainer.appendChild(dlBtn);
-
-    const btn = document.createElement('button');
-    btn.className = 'btn-action';
-    btn.style.borderColor = 'var(--accent-red)';
-    btn.innerText = "Zagraj ponownie";
-    btn.onclick = () => location.reload();
-    actionContainer.appendChild(btn);
+function showEnding(customText) {
+    gameState.currentEventRender = null;
+    endCareerScreen(customText);
 }
 
 function offerLabelDeal() {
@@ -611,17 +563,27 @@ function nextTurn() {
 
     // Specjalne eventy załamania po przekroczeniu 50% nałogu (Priorytetowe)
     if (gameState.addiction > 50 && Math.random() < 0.3) {
-        const addictionEvents = [
+        let addictionEvents = [
             { id: "addict_1", desc: "Zaspałeś na własny teledysk. Ekipa czekała 4 godziny. Reżyser wkurzony.", options: [{ text: "Mam to w dupie", effects: { Fejm: -10, Hype: -5, Respekt: -10 } }, { text: "Zwracam im hajs", effects: { Kasa: -5000, Respekt: 5 } }] },
             { id: "addict_2", desc: "Paranoje wchodzą za mocno. Myślisz, że menedżer cię okrada. Zwalniasz go w środku nocy.", options: [{ text: "Nie ufam nikomu!", effects: { Odklejka: 15, Hype: -10 } }] },
             { id: "addict_3", desc: "Długi u lokalnego dilera. Goście w kominiarkach pukają do drzwi.", options: [{ text: "Płacę z odsetkami", effects: { Kasa: -15000, StreetCred: -5 } }, { text: "Każę im spierdalać", effects: { StreetCred: 10, Odklejka: 10, Hype: 5 } }] },
-            { id: "addict_4", desc: "Odwołany koncert na 30 minut przed startem. Nie jesteś w stanie stać na nogach.", options: [{ text: "Zwróć bilety", effects: { Kasa: -20000, Fejm: -15, Respekt: -20 } }] },
-            { id: "addict_5", desc: "Wjeżdżasz na live na Instagramie całkowicie porobiony i obrażasz fanów.", options: [{ text: "Trudno", effects: { Hype: 30, Odklejka: 25, Respekt: -30, Fejm: -10 } }] }
+            { id: "addict_4", desc: "Odwołany koncert na 30 minut przed startem. Nie jesteś w stanie stać na nogach.", options: [{ text: "Zwróć bilety", effects: { Kasa: -20000, Fejm: -15, Respekt: -20 } }] }
         ];
+        if (gameState.year >= 2010) {
+            addictionEvents.push({ id: "addict_5", desc: "Wjeżdżasz na live na Instagramie całkowicie porobiony i obrażasz fanów.", options: [{ text: "Trudno", effects: { Hype: 30, Odklejka: 25, Respekt: -30, Fejm: -10 } }] });
+        }
         // Losujemy jeden z nich
         const ev = addictionEvents[Math.floor(Math.random() * addictionEvents.length)];
         const evText = `<span style="color:var(--accent-red); font-size:14px; text-transform:uppercase; display:block; margin-bottom:10px;">🚨 KONSEKWENCJE NAŁOGU</span>${ev.desc}`;
-        renderEvent(evText, ev.options);
+        const processedOptions = ev.options.map(opt => ({
+            text: opt.text,
+            action: () => {
+                applyEffects(opt.effects);
+                nextTurn();
+            }
+        }));
+        gameState.currentEventRender = { text: evText, options: processedOptions };
+        renderEvent(evText, processedOptions);
         return;
     }
 
@@ -736,7 +698,7 @@ function confirmEndCareer() {
     ]);
 }
 
-function endCareerScreen() {
+function endCareerScreen(customText = null) {
     const eventWindow = document.getElementById('event-window');
     
     // ZAWSZE czyścimy całe okno ze śmieci z innych modułów
@@ -751,10 +713,12 @@ function endCareerScreen() {
     if (tier === 3) finalTierText = "Popularny";
     if (tier === 4) finalTierText = "Gwiazda";
 
+    const descText = customText ? customText : "Kiedyś trzeba ze sceny zejść. Twoja dyskografia to historia, a Twoje imię zapisało się w polskim rapie na zawsze.";
+
     eventDesc.innerHTML = `
         <div id="stats-summary" style="padding:20px; background:#111; border: 2px solid var(--accent-red); border-radius:10px;">
             <h2 style="color:var(--accent-red); font-size:30px; text-transform:uppercase; font-family:'Sedgwick Ave', cursive;">Zakończenie Kariery</h2>
-            <p>Kiedyś trzeba ze sceny zejść. Twoja dyskografia to historia, a Twoje imię zapisało się w polskim rapie na zawsze.</p>
+            <p>${descText}</p>
             <div style="background:#1a1a1a; padding:15px; border-radius:10px; margin-top:20px; text-align:left; display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:10px; font-size:14px;">
                 <p style="margin-bottom: 5px;"><strong>Ksywa:</strong> <span style="color:var(--accent-purple);">${gameState.nickname}</span></p>
                 <p style="margin-bottom: 5px;"><strong>Ostateczny Status:</strong> ${finalTierText}</p>
