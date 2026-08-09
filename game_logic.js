@@ -53,7 +53,7 @@ const citiesByVoivodeship = {
     "Pomorskie": ["Gdańsk", "Gdynia", "Sopot", "Słupsk", "Tczew", "Rumia", "Starogard Gdański", "Wejherowo", "Chojnice"],
     "Śląskie": ["Katowice", "Częstochowa", "Sosnowiec", "Gliwice", "Zabrze", "Bielsko-Biała", "Bytom", "Rybnik", "Ruda Śląska", "Tychy", "Dąbrowa Górnicza", "Chorzów"],
     "Świętokrzyskie": ["Kielce", "Ostrowiec Świętokrzyski", "Starachowice", "Skarżysko-Kamienna", "Sandomierz", "Końskie"],
-    "Warmińsko-Mazurskie": ["Olsztyn", "Elbląg", "Ełk", "Ostróda", "Iława", "Giżycko", "Kętrzyn"],
+    "Warmińsko-Mazurskie": ["Olsztyn", "Elbląg", "Ełk", "Ostróda", "Iława", "Giżycko", "Kętrzyn", "Mrągowo"],
     "Wielkopolskie": ["Poznań", "Kalisz", "Konin", "Piła", "Ostrów Wielkopolski", "Gniezno", "Leszno", "Swarzędz", "Śrem"],
     "Zachodniopomorskie": ["Szczecin", "Koszalin", "Stargard", "Kołobrzeg", "Świnoujście", "Szczecinek", "Police", "Wałcz"]
 };
