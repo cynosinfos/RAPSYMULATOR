@@ -440,9 +440,6 @@ function finalizeRelease(type, promo) {
         });
     }
 
-    const eventWindow = document.getElementById('event-window');
-    const actionButtons = document.getElementById('action-buttons');
-    
     eventWindow.innerHTML = `<h2>Wydawnictwo wypuszczone!</h2>
     <p>Rozesłałeś promo, klip hula po sieci.</p>
     <p style="color:var(--accent-green);">Zarobiłeś ok. ${Math.round(moneyGain * 0.25)} PLN z pierwszego rzutu!</p>
