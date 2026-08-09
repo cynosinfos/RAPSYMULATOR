@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polski Raper Symulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #152e22; /* Jaśniejsza, butelkowa zieleń */
+            --text-color: #ffffff;
+            --accent-green: #d4af37; /* Złoty */
+            --accent-purple: #00ff99; /* Jasny, neonowy zielony */
+            --accent-red: #ff4d4d; /* Jaśniejszy czerwony */
+            --surface-color: #204230; /* Znacznie jaśniejsze tło elementów */
+            --btn-hover-bg: #2c5942; /* Jasne tło po najechaniu */
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px; /* Rozszerzone dla wersji desktopowej */
+            background-color: var(--surface-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            margin: 0 auto;
+        }
+
+        /* Nagłówki */
+        h1, h2, h3 {
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Sedgwick Ave', cursive;
+        }
+        
+        h1 {
+            color: var(--accent-purple);
+            text-shadow: 2px 2px 0px #000, 4px 4px 0px rgba(176, 38, 255, 0.4);
+            padding: 30px 0 10px 0;
+            font-size: 3rem;
+            transform: rotate(-2deg);
+        }
+        
+        h2 {
+            color: var(--accent-green);
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            transform: rotate(1deg);
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        /* EKRAN KREATORA */
+        #creator-screen {
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent-purple);
+            height: 6px;
+            background: #333;
+            border-radius: 5px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-purple);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(176, 38, 255, 0.5);
+        }
+
+        .range-value {
+            font-weight: 800;
+            color: var(--accent-green);
+        }
+
+        select {
+            padding: 14px;
+            background-color: #252525;
+            color: white;
+            border: 2px solid #333;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2339ff14' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+        }
+        
+        select:focus {
+            border-color: var(--accent-green);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            background-color: #252525;
+            color: white;
+            border: 2px solid #333;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus {
+            border-color: var(--accent-green);
+        }
+
+        button.btn-primary {
+            background: linear-gradient(45deg, #7a00cc, var(--accent-purple));
+            color: white;
+            border: none;
+            padding: 18px 20px;
+            font-size: 18px;
+            font-weight: 800;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(176, 38, 255, 0.4);
+            letter-spacing: 1px;
+        }
+
+        button.btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(176, 38, 255, 0.7);
+        }
+
+        /* EKRAN GRY */
+        #game-screen {
+            display: none;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .stats-bar {
+            position: sticky;
+            top: 0;
+            background-color: rgba(30, 30, 30, 0.98);
+            backdrop-filter: blur(8px);
+            padding: 10px;
+            border-bottom: 2px solid var(--accent-green);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 8px;
+            font-size: 11px;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #252525;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 3px solid #444;
+            transition: border-color 0.3s;
+        }
+
+        .stat-item:hover {
+            border-left-color: var(--accent-purple);
+        }
+
+        .stat-label {
+            color: #aaa;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        .stat-value {
+            font-weight: 800;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .stat-value.green { color: var(--accent-green); }
+        .stat-value.purple { color: var(--accent-purple); }
+
+        #game-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background: #1a1a1a;
+            border-bottom: 2px solid #333;
+            flex-wrap: wrap;
+            z-index: 9;
+        }
+
+        #game-nav button {
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+
+        #event-window {
+            flex-grow: 1;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        #event-description {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+            background: linear-gradient(180deg, #252525 0%, #1a1a1a 100%);
+            padding: 30px 20px;
+            border-radius: 12px;
+            border-top: 4px solid var(--accent-purple);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        #action-buttons {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: transparent;
+            padding-bottom: max(25px, env(safe-area-inset-bottom));
+        }
+
+        .btn-action {
+            background-color: #222;
+            color: #fff;
+            border: 3px solid #444;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Oswald', sans-serif;
+            box-shadow: 4px 4px 0px #000;
+        }
+
+        .btn-action:hover {
+            background-color: var(--accent-green);
+            color: #000;
+            border-color: #000;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #000;
+        }
+        
+        .btn-action:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #000;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Paski postępu dla statystyk */
+        .progress-bar-container {
+            width: 100%;
+            height: 4px;
+            background: #333;
+            margin-top: 4px;
+            border-radius: 2px;
+            overflow: hidden;
+            display: none; /* Domyślnie ukryte, do ewentualnego włączenia w przyszłości */
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--accent-green);
+            width: 50%;
+        }
+
+        .credits-box {
+            margin-top: 40px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background: rgba(0,0,0,0.3);
+            font-size: 11px;
+            line-height: 1.6;
+            color: #aaa;
+            text-align: center;
+        }
+        .credits-box a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .credits-box a:hover {
+            color: var(--accent-green);
+        }
+        .credits-box p {
+            margin-bottom: 12px;
+        }
+        .credits-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* MEDIA QUERIES DLA PC (Responsywność i większy ekran) */
+        @media (min-width: 768px) {
+            #creator-screen {
+                padding: 40px 80px;
+            }
+            .stats-bar {
+                font-size: 15px;
+                padding: 20px;
+            }
+            #event-description {
+                font-size: 22px;
+                padding: 40px;
+            }
+            .btn-action {
+                font-size: 18px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- EKRAN KREATORA -->
+        <div id="creator-screen">
+            <div>
+                <h1>Polski Raper</h1>
+                <h2>Symulator Kariery</h2>
+            </div>
+            
+
+            <div class="form-group">
+                <label for="nickname-input">Twoja Ksywa:</label>
+                <input type="text" id="nickname-input" placeholder="Wpisz ksywę..." autocomplete="off">
+            </div>
+            
+            <div class="form-group">
+                <label for="age-input">Wiek: <span id="age-val" class="range-value">18 lat</span></label>
+                <input type="range" id="age-input" min="18" max="35" value="18" oninput="document.getElementById('age-val').innerText = this.value + ' lat'">
+            </div>
+
+            <div class="form-group">
+                <label for="woj-select">Województwo:</label>
+                <select id="woj-select">
+                    <option value="Dolnośląskie">Dolnośląskie</option>
+                    <option value="Kujawsko-Pomorskie">Kujawsko-Pomorskie</option>
+                    <option value="Lubelskie">Lubelskie</option>
+                    <option value="Lubuskie">Lubuskie</option>
+                    <option value="Łódzkie">Łódzkie</option>
+                    <option value="Małopolskie">Małopolskie</option>
+                    <option value="Mazowieckie" selected>Mazowieckie</option>
+                    <option value="Opolskie">Opolskie</option>
+                    <option value="Podkarpackie">Podkarpackie</option>
+                    <option value="Podlaskie">Podlaskie</option>
+                    <option value="Pomorskie">Pomorskie</option>
+                    <option value="Śląskie">Śląskie</option>
+                    <option value="Świętokrzyskie">Świętokrzyskie</option>
+                    <option value="Warmińsko-Mazurskie">Warmińsko-Mazurskie</option>
+                    <option value="Wielkopolskie">Wielkopolskie</option>
+                    <option value="Zachodniopomorskie">Zachodniopomorskie</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="city-select">Miasto Startowe:</label>
+                <select id="city-select">
+                    <!-- Opcje generowane dynamicznie -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="style-select">Styl Rapu:</label>
+                <select id="style-select">
+                    <option value="Ulica / Hardcore">Ulica / Hardcore</option>
+                    <option value="Boom Bap / Truskul">Boom Bap / Truskul</option>
+                    <option value="Trap / Newschool">Trap / Newschool</option>
+                    <option value="Melobanger / R&B">Melobanger / R&B</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="year-input">Rok Startowy: <span id="year-val" class="range-value">2000</span></label>
+                <input type="range" id="year-input" min="1990" max="2020" value="2000" oninput="document.getElementById('year-val').innerText = this.value">
+            </div>
+
+            <button class="btn-primary" onclick="startGame()">Zacznij Karierę</button>
+
+            <div class="credits-box" style="margin-top: 30px;">
+                <p>OBSERWUJ <a href="https://www.instagram.com/adammanski/" target="_blank">ADAM/TWÓRCA</a> I SPRAWDŹ WIĘCEJ GIER/PROJEKTÓW.</p>
+                <p>TA GRA TO KRÓTKA ODSKOCZNIA OD MOJEGO GŁÓWNEGO PROJEKTU GRY O NIEDŹWIEDZIU WOJTKU, SPRAWDŹ STRONĘ NA STEAM I DODAJ DO LISTY ŻYCZEŃ - DZIĘKI - <a href="https://store.steampowered.com/app/4716770/Wojtek_A_Soldier_Without_a_Uniform/" target="_blank">TU</a>.</p>
+                <p>GRA STWORZONA W CELACH HUMORYSTYCZNYCH NA KANWIE POMYSŁU I ZA POZWOLENIEM LESZKA MILEWSKIEGO, KTÓRY STWORZYŁ GRĘ "POLSKI PIŁKARZ SYMULATOR" DO SPRAWDZENIA <a href="https://www.tetrycy.com.pl/polskipilkarzsimulator/1.64/" target="_blank">TU</a> - ORAZ OBSERWUJ TETRYKÓW NA YT <a href="https://www.youtube.com/@Tetrycy" target="_blank">TU</a>.</p>
+            </div>
+        </div>
+
+        <!-- EKRAN GRY -->
+        <div id="game-screen">
+            <div style="text-align: center; padding: 10px; background: #0a1410; border-bottom: 2px solid var(--accent-green); width: 100%; display: flex; justify-content: center; align-items: center;">
+                <!-- Baner reklamowy (728x90 lub responsywny) -->
+                <a href="https://store.steampowered.com/app/4716770/Wojtek_A_Soldier_Without_a_Uniform/" target="_blank">
+                    <img src="banner.png" alt="Wojtek na Steam" style="max-width: 100%; height: auto; border: 2px solid var(--accent-green);">
+                </a>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-item"><span class="stat-label">Rok</span> <span id="stat-year" class="stat-value purple"></span></div>
+                <div class="stat-item"><span class="stat-label">Status</span> <span id="stat-tier" class="stat-value purple" style="font-size:12px;"></span></div>
+                <div class="stat-item"><span class="stat-label">Wiek</span> <span id="stat-age" class="stat-value"></span></div>
+                <div class="stat-item"><span class="stat-label">Kasa</span> <span id="stat-money" class="stat-value green"></span></div>
+                <div class="stat-item"><span class="stat-label">Street Credit</span> <span id="stat-street" class="stat-value"></span></div>
+                <div class="stat-item"><span class="stat-label">Respekt</span> <span id="stat-respect" class="stat-value"></span></div>
+                <div class="stat-item"><span class="stat-label">Fejm</span> <span id="stat-fame" class="stat-value"></span></div>
+                <div class="stat-item"><span class="stat-label">Hype</span> <span id="stat-hype" class="stat-value purple"></span></div>
+                <div class="stat-item"><span class="stat-label">Odklejka</span> <span id="stat-odklejka" class="stat-value red"></span></div>
+                <div class="stat-item"><span class="stat-label">Wena</span> <span id="stat-wena" class="stat-value yellow"></span></div>
+                <div class="stat-item" id="stat-addiction-container" style="display:none;"><span class="stat-label" style="color:var(--accent-red);">Nałóg</span> <span id="stat-addiction" class="stat-value red"></span></div>
+                <div class="stat-item" id="stat-psiarnia-container" style="display:none;"><span class="stat-label" style="color:#3366ff;">Psiarnia</span> <span id="stat-psiarnia" class="stat-value" style="color:#3366ff;"></span></div>
+                
+                <!-- Informacje ekstra -->
+                <div class="stat-item" style="grid-column: span 2; text-align: center; background: #1a2920;">
+                    <span class="stat-label">Aktualny Trend</span> <span id="stat-trend" class="stat-value purple" style="font-size:12px;">Brak</span>
+                </div>
+                <div class="stat-item" style="grid-column: span 2; text-align: center; background: #222;">
+                    <span class="stat-label">Wytwórnia</span> <span id="stat-label" class="stat-value" style="color:#aaa;"></span>
+                </div>
+                <div class="stat-item" style="grid-column: span 2; text-align: center; background: #333; border-left-color: var(--accent-purple);">
+                    <span class="stat-label">Garaż</span> <span id="stat-car" class="stat-value" style="color:var(--accent-purple); font-size:11px;">Brak</span>
+                </div>
+                <div class="stat-item" style="grid-column: span 2; text-align: center; background: #333; border-left-color: var(--accent-red);">
+                    <span class="stat-label">Kwadrat</span> <span id="stat-house" class="stat-value" style="color:var(--accent-red); font-size:11px;">Brak</span>
+                </div>
+            </div>
+            
+            <div id="game-nav">
+                <button class="btn-action" onclick="renderShop()">🛒 Sklep</button>
+                <button class="btn-action" style="border-color:var(--accent-purple); color:var(--accent-purple);" onclick="renderDrugs()">💊 Wspomagacze</button>
+                <button class="btn-action" onclick="renderStudio()">🎙️ Studio</button>
+                <button class="btn-action" onclick="renderAlbums()">💿 Twoje Płyty</button>
+                <button class="btn-action" onclick="renderCrew()">🤜 Twoja Ekipa</button>
+                <button class="btn-action" style="border-color:var(--accent-purple);" onclick="renderBank()">💸 Załatw Hajs</button>
+                <button class="btn-action" onclick="renderTour()">🎤 Trasa</button>
+                <button class="btn-action" onclick="renderTopka()">🏆 Topka</button>
+                <button class="btn-action" onclick="renderBiznes()">🏢 Biznes</button>
+                <button class="btn-action" style="border-color:var(--accent-red); color:var(--accent-red);" onclick="confirmEndCareer()">🛑 Zakończ Karierę</button>
+            </div>
+
+            <div id="event-window">
+                <div id="event-description">
+                    <!-- Tekst fabularny -->
+                </div>
+            </div>
+
+            <div id="action-buttons">
+                <!-- Przyciski z wyborami -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Customowy modal zastępujący alert() -->
+    <div id="custom-alert-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;">
+        <div style="background:#111; border: 2px solid var(--accent-red); padding: 20px; max-width: 400px; width: 90%; text-align:center; box-shadow: 0 0 20px rgba(255, 51, 102, 0.5);">
+            <h3 style="color:var(--accent-red); margin-top:0; font-family:'Sedgwick Ave', cursive;">INFO</h3>
+            <p id="custom-alert-text" style="color:#fff; margin-bottom:20px; font-size:16px;"></p>
+            <button class="btn-action" style="padding:10px 30px; font-size:16px;" onclick="document.getElementById('custom-alert-modal').style.display='none'">Rozumiem</button>
+        </div>
+    </div>
+
+    <!-- Biblioteka html2canvas do generowania screenshotów -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="events.js"></script>
+    <script src="events_expanded.js"></script>
+    <script src="events_part3.js"></script>
+    <script src="events_part4.js"></script>
+    <script src="procedural_events.js"></script>
+    <script src="shop.js"></script>
+    <script src="drugs_new.js"></script>
+    <script src="studio.js"></script>
+    <script src="albums.js"></script>
+    <script src="crew.js"></script>
+    <script src="bank.js"></script>
+    <script src="tour.js"></script>
+    <script src="topka.js"></script>
+    <script src="biznes.js"></script>
+    <script src="beef.js"></script>
+    <script src="game_logic.js"></script>
+</body>
+</html>

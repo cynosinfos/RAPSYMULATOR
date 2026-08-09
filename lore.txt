@@ -1,0 +1,240 @@
+Event 001: Handlowanie kasetami pod Pałacem Kultury
+* Opis: Wydałeś swoją pierwszą nielegalną kasetę magnetofonową z kserowaną okładką. Stoisz na łóżku polowym w centrum miasta.
+* Opcja A: Sprzedawaj kasety po 10 PLN i dołączaj do każdej ręcznie robioną naklejkę.
+   * Efekt: [Kasa: +500 PLN, Street Cred: +15%, Fejm: +5%, Hype: +10%, Odklejka: 0%, Wena: +5%]
+* Opcja B: Oddaj połowę nakładu osiedlowym dilerom w zamian za ochronę i promocję na dzielnicy.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +35%, Fejm: +2%, Hype: +15%, Odklejka: +10%, Wena: 0%]
+Event 002: Nocny powrót do domu po nagrywkach
+* Opis: Wracasz o 3:00 w nocy z pijanego nagrywania na kasecie u ziomka w piwnicy. Matka grozi, że zamknie drzwi na klucz4.
+* Opcja A: Nagraj o tym kultowy wers w zwrotce i przeproś matkę z samego rana4.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +20%, Fejm: +10%, Hype: +5%, Odklejka: -5%, Wena: +25%]
+* Opcja B: Prześpij się na wycieraczce pod drzwiami i zrób z tego osiedlową opowieść.
+   * Efekt: [Kasa: -50 PLN, Street Cred: +30%, Fejm: +5%, Hype: 0%, Odklejka: +15%, Wena: +10%]
+Event 003: Konfrontacja z subkulturą dresiarzy pod klubem
+* Opis: Po pierwszym koncercie w Miejskim Domu Kultury podchodzi grupa lokalnych osiłków pytających "za kim stoisz?".
+* Opcja A: Zacytuj bezkompromisowy wers o ulicznym szacunku i stanij do konfrontacji4.
+   * Efekt: [Kasa: -200 PLN, Street Cred: +40%, Fejm: +15%, Hype: +20%, Odklejka: +20%, Wena: 0%]
+* Opcja B: Poczęstuj ich kasetą i zaoferuj darmowy wstęp na następny występ.
+   * Efekt: [Kasa: -30 PLN, Street Cred: -20%, Fejm: +10%, Hype: +5%, Odklejka: -10%, Wena: +5%]
+Event 004: Występ w telewizji śniadaniowej
+* Opis: Reżyser programu telewizyjnego proponuje ci występ na żywo w porannym paśmie. Wymagają garnituru.
+* Opcja A: Zgodzić się, założyć garnitur i zagrać piosenkę z playbacku z uśmiechem.
+   * Efekt: [Kasa: +2000 PLN, Street Cred: -40%, Fejm: +35%, Hype: +20%, Odklejka: -10%, Wena: -15%]
+* Opcja B: Wejść na żywo w kominiarce, rzucić wulgaryzm do mikrofonu i wybiec ze studia2.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +50%, Fejm: +25%, Hype: +40%, Odklejka: +30%, Wena: +10%]
+Event 005: Konflikt z nieuczciwym wydawcą kaset
+* Opis: Właściciel wytwórni kupił nowy samochód, ale twierdzi, że twoja kaseta sprzedała się tylko w 30 sztukach.
+* Opcja A: Zrób ze skompletowaną ekipą wjazd do biura i zabierz sprzęt nagłośnieniowy.
+   * Efekt: [Kasa: +1500 PLN, Street Cred: +30%, Fejm: +10%, Hype: +15%, Odklejka: +25%, Wena: 0%]
+* Opcja B: Nagraj diss na wydawcę i wypuścić go na podziemnej kasecie.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +25%, Fejm: +15%, Hype: +25%, Odklejka: +5%, Wena: +20%]
+Event 006: Akcja grafficiarska na zajezdni kolejowej
+* Opis: Ekipa z osiedla proponuje nocny wypad na malowanie pociągów, aby rozpromować nazwę twojego składu2.
+* Opcja A: Idź i namaluj gigantyczny tag ze swoją ksywą na boku wagonu2.
+   * Efekt: [Kasa: -300 PLN, Street Cred: +35%, Fejm: +10%, Hype: +15%, Odklejka: +15%, Wena: +10%]
+* Opcja B: Zostań na czatach i pilnuj, czy nie nadjeżdża patrol policji.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +15%, Fejm: +2%, Hype: +5%, Odklejka: 0%, Wena: +5%]
+Event 007: Nagranie wokalne w domowej łazience
+* Opis: Nie masz pieniędzy na studio. Kolega twierdzi, że kafelki w łazience dają "naturalny pogłos"5.
+* Opcja A: Nagraj cały materiał w wannie wymścielonej kocami5.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +25%, Fejm: +5%, Hype: +10%, Odklejka: +10%, Wena: +20%]
+* Opcja B: Weź pożyczkę od osiedlowego lichwiarza i wynajmij profesjonalne studio na 3 godziny.
+   * Efekt: [Kasa: -1500 PLN, Street Cred: -10%, Fejm: +15%, Hype: +5%, Odklejka: +5%, Wena: +10%]
+Event 008: Propozycja dogrania się do utworu popowego
+* Opis: Znana piosenkarka estradowa szuka rapera do tła w swoim wakacyjnym przeboju.
+* Opcja A: Zgodzić się za wysokie honorarium i kupić kilkuletni zagraniczny samochód.
+   * Efekt: [Kasa: +8000 PLN, Street Cred: -50%, Fejm: +40%, Hype: +20%, Odklejka: +10%, Wena: -20%]
+* Opcja B: Odrzucić ofertę i nagrać numer potępiający komercjalizację hip-hopu.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +40%, Fejm: +5%, Hype: +15%, Odklejka: 0%, Wena: +20%]
+Event 009: Pęknięty pasek w magnetofonie podczas występów
+* Opis: Na kluczowym koncercie w MDK magnetofon odtwarzający podkład zacina się i niszczy taśmę.
+* Opcja A: Dokończ występ a cappella, rapując prosto w twarz widowni.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +30%, Fejm: +15%, Hype: +20%, Odklejka: +5%, Wena: +10%]
+* Opcja B: Rzuć mikrofonem w realizatora i zejdź ze sceny.
+   * Efekt: [Kasa: -500 PLN, Street Cred: +10%, Fejm: +20%, Hype: +30%, Odklejka: +40%, Wena: -10%]
+Event 010: Wywiad dla osiedlowego gazetki
+* Opis: Pasjonat rapu proponuje wywiad do czarno-białego fanzinu drukowanego w punkcie ksero.
+* Opcja A: Udzielić wywiadu o historii ulicy i bezkompromisowej filozofii życia.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +20%, Fejm: +5%, Hype: +5%, Odklejka: -5%, Wena: +15%]
+* Opcja B: Wyśmiać autora i zażądać opłaty za rozmawianie z tobą.
+   * Efekt: [Kasa: 0 PLN, Street Cred: -25%, Fejm: -5%, Hype: -10%, Odklejka: +20%, Wena: -10%]
+Event 011: Prowokacja na forum Ślizg.eu
+* Opis: Na forum dyskusyjnym powstał 40-stronicowy wątek wyśmiewający twoje brzmienie i luźne spodnie6.
+* Opcja A: Załóż fikcyjne konto i przekonuj wszystkich, że jesteś geniuszem6.
+   * Efekt: [Kasa: 0 PLN, Street Cred: -15%, Fejm: +5%, Hype: +10%, Odklejka: +25%, Wena: -10%]
+* Opcja B: Nagraj bezlitosny diss i udostępnij plik MP3 na darmowym serwerze.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +25%, Fejm: +20%, Hype: +30%, Odklejka: +5%, Wena: +20%]
+Event 012: Wyboisty koncert w Zielonej Górze
+* Opis: Publiczność na klubowym koncercie zaczyna gwizdać i domagać się schodzenia ze sceny7.
+* Opcja A: Zrób ostre przemówienie przez mikrofon i zatrzymaj cały występ7.
+   * Efekt: [Kasa: -1000 PLN, Street Cred: +35%, Fejm: +30%, Hype: +40%, Odklejka: +35%, Wena: 0%]
+* Opcja B: Zagraj zaplanowany materiał do końca, unikając wzroku zgromadzonych.
+   * Efekt: [Kasa: +1500 PLN, Street Cred: -20%, Fejm: -10%, Hype: -15%, Odklejka: -10%, Wena: -5%]
+Event 013: Nominacja na gali VIVA Comet
+* Opis: Dostajesz nominację do telewizyjnej nagrody muzycznej. Stacja wymaga eleganckiego ubioru.
+* Opcja A: Przyjdź w dresie oversize, wyśmiej statuetkę ze sceny i opuść salę4.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +45%, Fejm: +25%, Hype: +35%, Odklejka: +20%, Wena: +10%]
+* Opcja B: Załóż garnitur, odebrana statuetka niech wyląduje na półce, a ty podziękuj sponsorom.
+   * Efekt: [Kasa: +5000 PLN, Street Cred: -45%, Fejm: +50%, Hype: +15%, Odklejka: -15%, Wena: -20%]
+Event 014: Storytelling o pizzerii na osiedlu
+* Opis: Postanawiasz napisać utwór z rozbudowaną fabułą o tragicznej miłości i pizzerii4.
+* Opcja A: Dopracuj teksty do perfekcji i zatrudnij profesjonalnych aktorów do teledysku4.
+   * Efekt: [Kasa: -5000 PLN, Street Cred: +30%, Fejm: +40%, Hype: +25%, Odklejka: -5%, Wena: +40%]
+* Opcja B: Wpleć w historię absurdalne i nierealistyczne zwroty akcji4.
+   * Efekt: [Kasa: -1000 PLN, Street Cred: +10%, Fejm: +15%, Hype: +15%, Odklejka: +20%, Wena: +10%]
+Event 015: Własna linia ubrań ciuchowych
+* Opis: Fani chcą nosić szerokie spodnie z twoim logotypem. Dystrybutor proponuje współpracę.
+* Opcja A: Wypuść serię spodni tak szerokich, że mieszczą dwóch ludzi naraz.
+   * Efekt: [Kasa: +15000 PLN, Street Cred: +20%, Fejm: +20%, Hype: +15%, Odklejka: +10%, Wena: 0%]
+* Opcja B: Sprzedawaj wysoce limitowane edycje z jakościowych materiałów.
+   * Efekt: [Kasa: +5000 PLN, Street Cred: +35%, Fejm: +5%, Hype: +25%, Odklejka: 0%, Wena: +5%]
+Event 016: Pozew za użycie nielegalnego sampla
+* Opis: Znany kompozytor muzyki filmowej odkrywa fragment swojego utworu na twojej płycie CD.
+* Opcja A: Zapłać ugodę finansową po cichu i usuń sampel z reedycji.
+   * Efekt: [Kasa: -10000 PLN, Street Cred: -15%, Fejm: +5%, Hype: -10%, Odklejka: -10%, Wena: 0%]
+* Opcja B: Nagraj utwór potępiający twórcę i wyzwij go na pojedynek freestyle'owy.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +30%, Fejm: +25%, Hype: +35%, Odklejka: +30%, Wena: +15%]
+Event 017: Wyjazd na festiwal Hip-Hop Kemp
+* Opis: Jedziesz pociągiem pełnym słuchaczy na kultowy festiwal w Czechach.
+* Opcja A: Imprezuj przez trzy dni bez przerwy i wyjdź na scenę całkowicie pozbawiony głosu.
+   * Efekt: [Kasa: -1000 PLN, Street Cred: +30%, Fejm: +15%, Hype: +20%, Odklejka: +40%, Wena: -20%]
+* Opcja B: Przygotuj dopracowany show z DJ-em i żywym zespołem.
+   * Efekt: [Kasa: +3000 PLN, Street Cred: +20%, Fejm: +30%, Hype: +15%, Odklejka: -10%, Wena: +25%]
+Event 018: Afera o znieważenie piosenkarki pop
+* Opis: Gwiazda muzyki popularnej czuje się urażona twoim tekstem o jej osobie4.
+* Opcja A: Przeproś w oficjalnym oświadczeniu wystosowanym do mediów4.
+   * Efekt: [Kasa: -2000 PLN, Street Cred: -40%, Fejm: +10%, Hype: -20%, Odklejka: -15%, Wena: -20%]
+* Opcja B: Zrób koszulki z obraźliwym wersem i sprzedawaj je na koncertach4.
+   * Efekt: [Kasa: +10000 PLN, Street Cred: +40%, Fejm: +35%, Hype: +45%, Odklejka: +25%, Wena: +10%]
+Event 019: Realizacja teledysku kamerą cyfrową
+* Opis: Masz budżet wysokości 500 PLN i kolegę z pasją do filmowania.
+* Opcja A: Nagraj mroczny teledysk z wymachiwaniem rękami w garażu podziemnym7.
+   * Efekt: [Kasa: -500 PLN, Street Cred: +25%, Fejm: +10%, Hype: +15%, Odklejka: +5%, Wena: +10%]
+* Opcja B: Pożycz luksusowy samochód od znajomego i udawaj styl teledysków z USA.
+   * Efekt: [Kasa: -2000 PLN, Street Cred: -30%, Fejm: +15%, Hype: +10%, Odklejka: +20%, Wena: -10%]
+Event 020: Diss na popularną markę parówek
+* Opis: Producent wędlin proponuje reklamę, ale ty decydujesz się wykorzystać temat marketingowo.
+* Opcja A: Wystąp w reklamie parówek na billboardach w całym kraju.
+   * Efekt: [Kasa: +50000 PLN, Street Cred: -40%, Fejm: +30%, Hype: +30%, Odklejka: +10%, Wena: -20%]
+* Opcja B: Nagraj bezlitosny diss na przetwory mięsne i komercję.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +25%, Fejm: +10%, Hype: +15%, Odklejka: +5%, Wena: +15%]
+Event 021: Absurdalny gadżet w boxie preorderowym
+* Opis: Fani oczekują unikalnych dodatków do limitowanej edycji nowej płyty.
+* Opcja A: Dołącz do płyty skarpetki z logo, fragment podartej koszulki i puszkę powietrza8.
+   * Efekt: [Kasa: +60000 PLN, Street Cred: -10%, Fejm: +25%, Hype: +50%, Odklejka: +20%, Wena: 0%]
+* Opcja B: Wydaj album w skromnym, plastikowym pudełku, stawiając wyłącznie na muzykę.
+   * Efekt: [Kasa: +10000 PLN, Street Cred: +30%, Fejm: -10%, Hype: -20%, Odklejka: -10%, Wena: +10%]
+Event 022: Zaproszenie do akcji Młode Wilki
+* Opis: Portal branżowy wybiera cię do prestiżowej akcji promującej obiecujące talenty9.
+* Opcja A: Nagraj porywającą zwrotkę i zdominuj utwór zbiorowy9.
+   * Efekt: [Kasa: +2000 PLN, Street Cred: +20%, Fejm: +35%, Hype: +40%, Odklejka: 0%, Wena: +30%]
+* Opcja B: Wywołaj sprzeczkę o ułożenie na zdjęciu grupowym i spóźnij się na nagrania.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +10%, Fejm: +15%, Hype: +20%, Odklejka: +30%, Wena: -10%]
+Event 023: Kupno zwrotki od rap-gwiazdy z USA
+* Opis: Agencja oferuje kontakt do zapomnianej legendy rapu z Nowego Jorku za 10,000 USD.
+* Opcja A: Zapłać kwotę i otrzymaj nagranie niskiej jakości przysłane pocztą e-mail.
+   * Efekt: [Kasa: -40000 PLN, Street Cred: +15%, Fejm: +30%, Hype: +25%, Odklejka: +10%, Wena: -5%]
+* Opcja B: Zainwestuj te środki w realizację teledysku za granicą z użyciem dronów.
+   * Efekt: [Kasa: -40000 PLN, Street Cred: 0%, Fejm: +40%, Hype: +35%, Odklejka: 0%, Wena: +15%]
+Event 024: Wyjazdowy vlog z trasy i zniszczenia w hotelu
+* Opis: Podczas trasy koncertowej twój hypeman niszczy wyposażenie pokoju, a wszystko trafia na YouTube.
+* Opcja A: Opublikuj film z krzykliwym tytułem i zbieraj zyski z wyświetleń.
+   * Efekt: [Kasa: +2000 PLN, Street Cred: +15%, Fejm: +30%, Hype: +45%, Odklejka: +35%, Wena: 0%]
+* Opcja B: Usuń nagranie i pokryj szkody z własnej kieszeni.
+   * Efekt: [Kasa: -3000 PLN, Street Cred: -20%, Fejm: -10%, Hype: -15%, Odklejka: -10%, Wena: 0%]
+Event 025: Finał Bitwy Freestyle’owej WBW
+* Opis: Stajesz na scenie w finale wielkiej bitwy improwizowanej. Przeciwnik atakuje twój styl.
+* Opcja A: Odpowiedz celną, ripostą uderzającą w jego przeszłość.
+   * Efekt: [Kasa: +2000 PLN, Street Cred: +40%, Fejm: +20%, Hype: +30%, Odklejka: +10%, Wena: +20%]
+* Opcja B: Zapomnij tekstu, zacznij reklamować swój nowy album i zejdź ze sceny.
+   * Efekt: [Kasa: 0 PLN, Street Cred: -30%, Fejm: +15%, Hype: +10%, Odklejka: +25%, Wena: -20%]
+Event 026: Lokowanie lokalu gastronomicznego w klipie
+* Opis: Właściciel lokalnej sieci gastronomicznej oferuje pieniądze za umieszczenie jego logo w teledysku.
+* Opcja A: Zgodzić się i rapować z jedzeniem w dłoni na pierwszym planie.
+   * Efekt: [Kasa: +10000 PLN, Street Cred: -25%, Fejm: +20%, Hype: +15%, Odklejka: +15%, Wena: -10%]
+* Opcja B: Odrzucić ofertę i wyśmiać lokowanie produktów w utworze.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +20%, Fejm: +5%, Hype: +10%, Odklejka: 0%, Wena: +10%]
+Event 027: Zmiana stylu z boom-bapu na trap
+* Opis: Nowoczesne brzmienia zdominowały rynek. Dotychczasowi fani oskarżają cię o zdradę.
+* Opcja A: Przestaw się całkowicie na autotune, zmień wizerunek i zacznij pisać o nowoczesnym stylu życia.
+   * Efekt: [Kasa: +50000 PLN, Street Cred: -50%, Fejm: +60%, Hype: +50%, Odklejka: +20%, Wena: +10%]
+* Opcja B: Nagraj płytę hołdującą brzmieniu lat 90., ignorując nowe trendy.
+   * Efekt: [Kasa: +5000 PLN, Street Cred: +45%, Fejm: -20%, Hype: -30%, Odklejka: -10%, Wena: +20%]
+Event 028: Udział w wyzwaniu Hot16Challenge
+* Opis: Zostajesz nominowany do nagrania 16 wersów pod presją czasu w ramach akcji charytatywnej.
+* Opcja A: Nagraj porywającą zwrotkę, wpłać kwotę i nominuj znane postacie sceny politycznej.
+   * Efekt: [Kasa: -5000 PLN, Street Cred: +20%, Fejm: +45%, Hype: +40%, Odklejka: +5%, Wena: +25%]
+* Opcja B: Wykorzystaj okazję, by w 16 wersach reklamować swój nadchodzący sklep z ubraniami.
+   * Efekt: [Kasa: +15000 PLN, Street Cred: -35%, Fejm: +20%, Hype: +10%, Odklejka: +20%, Wena: -15%]
+Event 029: Blokada monetyzacji na platformie wideo
+* Opis: Automatyczny system wykrył nieautoryzowany sampel w twoim głównym hicie.
+* Opcja A: Złóż odwołanie i zaangażuj prawników do walki z korporacją.
+   * Efekt: [Kasa: -2000 PLN, Street Cred: +10%, Fejm: +5%, Hype: +10%, Odklejka: +10%, Wena: 0%]
+* Opcja B: Nagraj ten sam utwór od nowa z nieznacznie zmienionym podkładem.
+   * Efekt: [Kasa: +3000 PLN, Street Cred: -10%, Fejm: +10%, Hype: +5%, Odklejka: +5%, Wena: +5%]
+Event 030: Otwarcie stacjonarnego butiku odzieżowego
+* Opis: Inwestujesz oszczędności w ekskluzywny sklep w modnej dzielnicy stolicy.
+* Opcja A: Zorganizuj huczne otwarcie z darmowym alkoholem i tłumem fanów.
+   * Efekt: [Kasa: -20000 PLN, Street Cred: +15%, Fejm: +30%, Hype: +35%, Odklejka: +15%, Wena: 0%]
+* Opcja B: Ogranicz sprzedaż wyłącznie do kanału internetowego bez fizycznego lokalu.
+   * Efekt: [Kasa: +10000 PLN, Street Cred: +10%, Fejm: 0%, Hype: +5%, Odklejka: -5%, Wena: 0%]
+Event 031: Transmisja na żywo o 4:00 rano z zagranicy
+* Opis: Pod wpływem silnych emocji i substancji odpalasz transmisję internetową z pokoju hotelowego10.
+* Opcja A: Opowiedz o układach w branży, wyzwij byłych wydawców i pokazuj pliki gotówki10.
+   * Efekt: [Kasa: 0 PLN, Street Cred: -20%, Fejm: +50%, Hype: +60%, Odklejka: +50%, Wena: -20%]
+* Opcja B: Wyłącz telefon i udaj się na spoczynek.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +10%, Fejm: -5%, Hype: -10%, Odklejka: -20%, Wena: +10%]
+Event 032: Odmowa lub przyjęcie oferty walki Freak Fight
+* Opis: Federacja walk celebrytów oferuje 600,000 PLN za walkę w klatce z patoinfluencerem8.
+* Opcja A: Podpisz kontrakt, rób awantury na konferencjach i przegraj pojedynek w kilkanaście sekund12.
+   * Efekt: [Kasa: +600000 PLN, Street Cred: -60%, Fejm: +70%, Hype: +80%, Odklejka: +40%, Wena: -40%]
+* Opcja B: Odrzuć ofertę i nagraj utwor krytykujący patologiczne zjawiska w sieci12.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +50%, Fejm: -10%, Hype: -10%, Odklejka: -20%, Wena: +30%]
+Event 033: Dedykowany zestaw w sieci fast food
+* Opis: Sieć restauracji proponuje sygnowanie zestawu obiadowego twoim nazwiskiem5.
+* Opcja A: Zgodzić się i wystąpić w krzykliwej reklamie telewizyjnej5.
+   * Efekt: [Kasa: +2000000 PLN, Street Cred: -70%, Fejm: +80%, Hype: +70%, Odklejka: +20%, Wena: -30%]
+* Opcja B: Wypuść własną linię ekologicznych napojów bezynowych.
+   * Efekt: [Kasa: +50000 PLN, Street Cred: +10%, Fejm: +10%, Hype: -10%, Odklejka: +10%, Wena: +5%]
+Event 034: Zapowiedź startu w wyborach prezydenckich 2040
+* Opis: Promując projekt konceptualny, ogłaszasz chęć ubiegania się o najwyższy urząd w państwie za kilkanaście lat10.
+* Opcja A: Brnij w narrację polityczną, twórz postulaty w piosenkach i zorganizuj konwencję10.
+   * Efekt: [Kasa: -50000 PLN, Street Cred: -20%, Fejm: +60%, Hype: +65%, Odklejka: +45%, Wena: +20%]
+* Opcja B: Oświadcz po tygodniu, że wydarzenie było jedynie eksperymentem społecznym10.
+   * Efekt: [Kasa: 0 PLN, Street Cred: -10%, Fejm: +20%, Hype: -20%, Odklejka: -10%, Wena: -10%]
+Event 035: Układ taneczny pod algorytmy TikToka
+* Opis: Wytwórnia twierdzi, że bez wiralowego tańca utwór nie ma szans na playlistach streamingowych.
+* Opcja A: Zagraj prosty układ taneczny w krótkim wideo i udostępnij go w sieci.
+   * Efekt: [Kasa: +100000 PLN, Street Cred: -50%, Fejm: +50%, Hype: +60%, Odklejka: +15%, Wena: -20%]
+* Opcja B: Nagraj teledysk, w którym demonstracyjnie niszczysz smartfony.
+   * Efekt: [Kasa: +5000 PLN, Street Cred: +35%, Fejm: +10%, Hype: +20%, Odklejka: +10%, Wena: +15%]
+Event 036: Oskarżenie o kradzież slangu i unikalnej odmiany słów
+* Opis: Podziemny twórca zarzuca ci zapożyczenie jego autorskiej konstrukcji językowej3.
+* Opcja A: Odpowiedz, że język należy do wszystkich i zignoruj zarzuty3.
+   * Efekt: [Kasa: 0 PLN, Street Cred: -15%, Fejm: +10%, Hype: +15%, Odklejka: +20%, Wena: +10%]
+* Opcja B: Zaproś artystę do wspólnego nagrania, dając mu przestrzeń na płycie13.
+   * Efekt: [Kasa: -10000 PLN, Street Cred: +25%, Fejm: +15%, Hype: +20%, Odklejka: 0%, Wena: +15%]
+Event 037: Zakup kosztownej biżuterii na kredyt
+* Opis: Luksusowy jubiler oferuje ci masywny łańcuch z diamentami na dogodne raty.
+* Opcja A: Weź biżuterię w dół, prezentuj ją w teledyskach i opowiadaj o bogactwie.
+   * Efekt: [Kasa: -300000 PLN, Street Cred: -10%, Fejm: +40%, Hype: +35%, Odklejka: +30%, Wena: -10%]
+* Opcja B: Kup imitację z taniego metalu i udawaj, że jest oryginalna.
+   * Efekt: [Kasa: -500 PLN, Street Cred: -40%, Fejm: +20%, Hype: +15%, Odklejka: +25%, Wena: 0%]
+Event 038: Tworzenie płyty z użyciem Sztucznej Inteligencji
+* Opis: Inżynierowie oprogramowania oferują wygenerowanie całego albumu z twoim sklonowanym głosem.
+* Opcja A: Wygeneruj cały materiał w kilkanaście minut i wydaj go bez informowania słuchaczy.
+   * Efekt: [Kasa: +200000 PLN, Street Cred: -80%, Fejm: +30%, Hype: +40%, Odklejka: +35%, Wena: -100%]
+* Opcja B: Wykorzystaj sztuczną inteligencję wyłącznie do wygenerowania nietypowych efektów tła.
+   * Efekt: [Kasa: +20000 PLN, Street Cred: +10%, Fejm: +15%, Hype: +25%, Odklejka: +10%, Wena: +20%]
+Event 039: Wywiad u kontrowersyjnego dziennikarza internetowego
+* Opis: Prowadzący popularny talk-show zadaje trudne pytania o kontrowersje z twojej przeszłości14.
+* Opcja A: Przyznaj się do błędu na żywo, wyraź skruchę i ogłoś przerwę od muzyki14.
+   * Efekt: [Kasa: +50000 PLN, Street Cred: -30%, Fejm: +60%, Hype: +50%, Odklejka: +20%, Wena: -10%]
+* Opcja B: Zignoruj pytania, wstań z kanapy i opuść studio w trakcie nagrania14.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +40%, Fejm: +40%, Hype: +60%, Odklejka: +30%, Wena: +10%]
+Event 040: Niespodziewane skasowanie profilu społecznościowego
+* Opis: Twój główny kanał komunikacji z fanami zostaje nagle usunięty lub zawieszony.
+* Opcja A: Ogłoś, że to zaplanowany zabieg artystyczny zwiastujący najważniejszy projekt życia.
+   * Efekt: [Kasa: 0 PLN, Street Cred: +20%, Fejm: -10%, Hype: +45%, Odklejka: +20%, Wena: +30%]
+* Opcja B: Załóż nowe konto z dopiskiem "Oficjalny" i proś fanów o udostępnianie.
+   * Efekt: [Kasa: 0 PLN, Street Cred: -30%, Fejm: -20%, Hype: -25%, Odklejka: +10%, Wena: -10%]
