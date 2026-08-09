@@ -139,6 +139,7 @@ function startGame() {
     gameState.city = document.getElementById('city-select').value;
     gameState.voivodeship = document.getElementById('woj-select').value;
     gameState.era = calculateEra(gameState.year);
+    gameState.lastCareerCheckYear = gameState.year;
 
     document.getElementById('creator-screen').style.display = 'none';
     document.getElementById('game-screen').style.display = 'flex';
@@ -375,6 +376,18 @@ function offerLabelDeal() {
 }
 
 function nextTurn() {
+    // Sprawdzenie czasu trwania kariery co 5 lat w grze
+    if (gameState.year - (gameState.lastCareerCheckYear || gameState.startYear) >= 5) {
+        gameState.lastCareerCheckYear = gameState.year;
+        const evText = `<span style="color:var(--accent-red); font-size:14px; text-transform:uppercase; display:block; margin-bottom:10px;">🚨 CZAS LECI</span>MOŻE JUŻ DOŚĆ TEGO, BLIŻEJ CI JESZCZE DO RAPERA CZY KASZTANA? ZASTANÓW SIE NAD ZAKOŃCZENIEM KARIERY, MOŻE JAKIŚ KWIT FLIP I NARA.`;
+        const evOptions = [
+            { text: "OK", action: () => { nextTurn(); } }
+        ];
+        gameState.currentEventRender = { text: evText, options: evOptions };
+        renderEvent(evText, evOptions);
+        return;
+    }
+
     // Wytwórnia dopomina się o płytę jeśli wziąłeś zaliczkę
     if (gameState.label !== "Brak (Niezależny)" && gameState.contractAlbumsLeft > 0) {
         gameState.turnsSinceAdvance = (gameState.turnsSinceAdvance || 0) + 1;
@@ -551,8 +564,7 @@ function nextTurn() {
     
     // Zmiana ery na siłę, jeśli skończyły się eventy (lub wymuszony koniec, jeśli Era 4)
     if (availableEvents.length === 0 && gameState.era >= 4) {
-        showEnding("Nagrałeś już wszystko co było do nagrania. Branża rapowa nie ma przed tobą tajemnic, przechodzisz na godną emeryturę.");
-        return;
+        // Gra toczy się dalej na eventach proceduralnych
     } else if (availableEvents.length === 0 && gameState.era < 4) {
         gameState.era++;
         gameState.year = (gameState.era === 2 ? 2000 : (gameState.era === 3 ? 2008 : 2015));
@@ -624,9 +636,14 @@ function nextTurn() {
         ev = getProceduralEvent(gameState.era, gameState.city);
     } else {
         // 40% Szansy na Główne Wydarzenie Fabularne
-        ev = drawPool[Math.floor(Math.random() * drawPool.length)];
-        if (!gameState.eventsPlayed.includes(ev.id)) {
-            gameState.eventsPlayed.push(ev.id);
+        if (drawPool.length > 0) {
+            ev = drawPool[Math.floor(Math.random() * drawPool.length)];
+            if (!gameState.eventsPlayed.includes(ev.id)) {
+                gameState.eventsPlayed.push(ev.id);
+            }
+        } else {
+            // Brak eventów fabularnych - fallback do proceduralnych
+            ev = getProceduralEvent(gameState.era, gameState.city);
         }
     }
 
