@@ -110,7 +110,11 @@ function renderTourStateSelection(tourOpt) {
         const btn = document.createElement('button');
         btn.className = 'btn-action';
         btn.innerHTML = `<strong>${s.name}</strong><br><span style="font-size:11px; color:#aaa;">${s.desc}</span>`;
-        btn.onclick = s.action;
+        btn.onclick = () => {
+            const allBtns = actionButtons.querySelectorAll('button');
+            allBtns.forEach(b => b.disabled = true);
+            s.action();
+        };
         actionButtons.appendChild(btn);
     });
 }
