@@ -16,7 +16,6 @@ function renderBank() {
                 <p style="text-align:center; font-size:12px; color:#aaa;">Pieniądze ściągają się automatycznie z twojego konta.</p>
             </div>
         `;
-        actions.innerHTML = `<button class="btn-action" onclick="renderCurrentEvent()">Wróc do gry</button>`;
     } else {
         let scamButton = "";
         if (!gameState.usedEpScam) {
@@ -67,11 +66,11 @@ function renderBank() {
                 </div>
             </div>
         `;
-        actions.innerHTML = `<button class="btn-action" onclick="renderCurrentEvent()">Wróc do gry</button>`;
     }
     
     html += `</div>`;
     window.innerHTML = html;
+    actions.innerHTML = `<button class="btn-action" onclick="renderCurrentEvent()">Wróć do gry</button>`;
 }
 
 function takeLoan(amount, payment, turns, type) {

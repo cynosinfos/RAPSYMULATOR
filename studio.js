@@ -388,7 +388,7 @@ function finalizeRelease(type, promo) {
     let olisText = "";
     let statusText = "";
     let statusRecord = "";
-    if (type === "solo" || type === "zespol") {
+    if (type !== "singiel") {
         let olisScore = gameState.fame + gameState.hype + (promo.hypeBonus / 2);
         let olisPlace = 50; 
         
@@ -454,6 +454,8 @@ function finalizeRelease(type, promo) {
         nextBtn.disabled = true;
         delete gameState.tempStyle; // czyszczenie zmiennej tymczasowej
         delete gameState.currentAlbumFeat; // reset featu
+        delete gameState.currentAlbumName; // czyszczenie tytulu
+        delete gameState.currentAlbumTheme; // czyszczenie tematu
         if (type !== "singiel") {
             if (typeof renderReviews === "function") {
                 renderReviews(gameState.releasedAlbums.length - 1);

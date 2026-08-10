@@ -204,6 +204,79 @@ function renderBiznes() {
         actionButtons.appendChild(btnSign);
     }
 
+    // SIDE HUSTLE
+    let lastSideHustle = typeof gameState.lastSideHustle === 'number' ? gameState.lastSideHustle : -999;
+    let turnsSinceHustle = (gameState.turnCount || 0) - lastSideHustle;
+    let canHustle = turnsSinceHustle >= 5;
+    
+    const btnHustle = document.createElement('button');
+    btnHustle.className = 'btn-action';
+    if (!canHustle) {
+        btnHustle.innerText = `Side Hustle (Fucha na boku) - Zablokowane (jeszcze ${5 - turnsSinceHustle} tur)`;
+        btnHustle.style.opacity = '0.5';
+        btnHustle.onclick = () => alert(`Musisz odczekać jeszcze ${5 - turnsSinceHustle} tur(y) przed kolejną fuchą.`);
+    } else {
+        btnHustle.innerText = "Side Hustle (Fucha na boku)";
+        btnHustle.style.borderColor = "#a349a4";
+        btnHustle.onclick = () => {
+            gameState.lastSideHustle = gameState.turnCount || 0;
+            
+            if (Math.random() < 0.1) {
+                // Event z księdzem (10%)
+                const evText = `<span style="color:var(--accent-red); font-size:14px; text-transform:uppercase; display:block; margin-bottom:10px;">🚨 PRZYPAŁ NA FUCHACH</span>OKRADŁEŚ PLEBANIE, PROBOSZCZ CIE ROZPOZNAŁ! Co robisz?`;
+                const evOptions = [
+                    { 
+                        text: "JEDZIESZ NA KOMENDE I PLACISZ 5K I ROK W WIEZIENIU", 
+                        effects: { Kasa: -5000, StreetCred: 30, Respekt: 10 },
+                        action: () => {
+                            gameState.year += 1;
+                            gameState.age += 1;
+                            applyEffects({ Kasa: -5000, StreetCred: 30, Respekt: 10 });
+                            alert("Idziesz do puszki na rok. Straciłeś 5000 PLN, ale ulica szanuje prawilniaków.");
+                            renderBiznes();
+                        }
+                    },
+                    { 
+                        text: "IDZIESZ Z KSIĘDZEM NA KOLENDE, POTRZEBUJE KOGOŚ DO PUKANIA DO DRZWI Z MINISTRANTAMI", 
+                        action: () => {
+                            gameState.streetCredit = 0;
+                            gameState.respect = 0;
+                            clampStats();
+                            updateStatsUI();
+                            alert("Chodzisz z księdzem po domach. Unikasz więzienia, ale jesteś skończony na ulicy (Street Credit i Respekt spadają do ZERA).");
+                            renderBiznes();
+                        }
+                    }
+                ];
+                gameState.currentEventRender = { text: evText, options: evOptions };
+                renderEvent(evText, evOptions);
+            } else {
+                // Zwykła fucha (90%)
+                const hustles = [
+                    { text: "Rozdajesz ulotki w stroju parówki", money: 1000 },
+                    { text: "Grasz na weselu kuzyna pod remizą", money: 2000 },
+                    { text: "Składasz długopisy w piwnicy", money: 500 },
+                    { text: "Użyczasz twarzy do reklamy tanich parówek", money: 10000 },
+                    { text: "Pracujesz na budowie u szwagra", money: 1500 },
+                    { text: "Wozisz jedzenie na rowerze z wielkim plecakiem", money: 800 },
+                    { text: "Zbierałeś złom", money: 1000 },
+                    { text: "Stałeś weekend na ochronie w burdelu za miastem", money: 5000, wena: -20 }
+                ];
+                let chosen = hustles[Math.floor(Math.random() * hustles.length)];
+                gameState.money += chosen.money;
+                if (chosen.wena) {
+                    gameState.wena += chosen.wena;
+                }
+                clampStats();
+                updateStatsUI();
+                let extraMsg = chosen.wena ? ` Wena ${chosen.wena}.` : "";
+                alert(`${chosen.text}. Zarabiasz ${chosen.money} PLN na boku.${extraMsg}`);
+                renderBiznes();
+            }
+        };
+    }
+    actionButtons.appendChild(btnHustle);
+
     const backBtn = document.createElement('button');
     backBtn.className = 'btn-action';
     backBtn.style.borderColor = 'var(--accent-red)';

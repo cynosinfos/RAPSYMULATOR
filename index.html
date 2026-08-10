@@ -9,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Sedgwick+Ave&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #152e22; /* Jaśniejsza, butelkowa zieleń */
+            --bg-color: #101c2e; /* Ciemny, lekko niebieski/granatowy */
             --text-color: #ffffff;
             --accent-green: #d4af37; /* Złoty */
             --accent-purple: #00ff99; /* Jasny, neonowy zielony */
             --accent-red: #ff4d4d; /* Jaśniejszy czerwony */
-            --surface-color: #204230; /* Znacznie jaśniejsze tło elementów */
-            --btn-hover-bg: #2c5942; /* Jasne tło po najechaniu */
+            --accent-blue: #3388ff; /* Niebieski akcent */
+            --surface-color: #1a2942; /* Znacznie jaśniejsze tło elementów (niebieskawe) */
+            --btn-hover-bg: #2a3d5c; /* Jasne tło po najechaniu (niebieskawe) */
         }
         
         * {
@@ -291,8 +292,8 @@
         }
 
         .btn-action:hover {
-            background-color: var(--accent-green);
-            color: #000;
+            background-color: var(--accent-blue);
+            color: #fff;
             border-color: #000;
             transform: translate(-2px, -2px);
             box-shadow: 6px 6px 0px #000;
@@ -446,7 +447,7 @@
 
         <!-- EKRAN GRY -->
         <div id="game-screen">
-            <div style="text-align: center; padding: 10px; background: #0a1410; border-bottom: 2px solid var(--accent-green); width: 100%; display: flex; justify-content: center; align-items: center;">
+            <div style="text-align: center; padding: 10px; background: #0a1014; border-bottom: 2px solid var(--accent-green); width: 100%; display: flex; justify-content: center; align-items: center;">
                 <!-- Baner reklamowy (728x90 lub responsywny) -->
                 <a href="https://store.steampowered.com/app/4716770/Wojtek_A_Soldier_Without_a_Uniform/" target="_blank">
                     <img src="banner.png" alt="Wojtek na Steam" style="max-width: 100%; height: auto; border: 2px solid var(--accent-green);">
@@ -468,7 +469,7 @@
                 <div class="stat-item" id="stat-psiarnia-container" style="display:none;"><span class="stat-label" style="color:#3366ff;">Psiarnia</span> <span id="stat-psiarnia" class="stat-value" style="color:#3366ff;"></span></div>
                 
                 <!-- Informacje ekstra -->
-                <div class="stat-item" style="grid-column: span 2; text-align: center; background: #1a2920;">
+                <div class="stat-item" style="grid-column: span 2; text-align: center; background: #1a2029;">
                     <span class="stat-label">Aktualny Trend</span> <span id="stat-trend" class="stat-value purple" style="font-size:12px;">Brak</span>
                 </div>
                 <div class="stat-item" style="grid-column: span 2; text-align: center; background: #222;">

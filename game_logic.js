@@ -101,7 +101,7 @@ function updateStatsUI() {
     document.getElementById('stat-year').innerText = gameState.year;
     document.getElementById('stat-tier').innerText = getTierName(calculateTier());
     document.getElementById('stat-age').innerText = gameState.age;
-    document.getElementById('stat-money').innerText = gameState.money + ' PLN';
+    document.getElementById('stat-money').innerText = Math.round(gameState.money).toLocaleString('pl-PL') + ' PLN';
     document.getElementById('stat-street').innerText = Math.round(gameState.streetCredit) + '%';
     document.getElementById('stat-respect').innerText = Math.round(gameState.respect) + '%';
     document.getElementById('stat-fame').innerText = Math.round(gameState.fame) + '%';
@@ -560,7 +560,7 @@ function nextTurn() {
     }
 
     const currentTier = calculateTier();
-    const availableEvents = gameEvents.filter(e => e.era === gameState.era && !gameState.eventsPlayed.includes(e.id) && (!e.minTier || e.minTier <= currentTier));
+    const availableEvents = gameEvents.filter(e => e.era === gameState.era && !gameState.eventsPlayed.includes(e.id) && (!e.minTier || e.minTier <= currentTier) && (!e.requiresLabel || gameState.ownLabel));
     
     // Zmiana ery na siłę, jeśli skończyły się eventy (lub wymuszony koniec, jeśli Era 4)
     if (availableEvents.length === 0 && gameState.era >= 4) {

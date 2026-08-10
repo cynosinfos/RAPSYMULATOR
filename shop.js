@@ -64,9 +64,9 @@ function renderShop() {
     const actions = document.getElementById('action-buttons');
     
     window.innerHTML = `
-        <div id="event-description">
-            <h2>Witaj w Sklepie</h2>
-            <p>Wydawaj hajs na fury, chaty i wakacje. Pamiętaj, flex kosztuje, ale przynosi sławę!</p>
+        <div id="event-description" style="text-align:left;">
+            <h2 style="color:var(--accent-purple); text-align:center;">🛒 ZAKUPY I INWESTYCJE</h2>
+            <p style="text-align:center; color:#aaa; margin-bottom:20px;">Wydawaj hajs na fury, kwadraty i sprzęt. Masz <b>${Math.round(gameState.money).toLocaleString('pl-PL')} PLN</b> na koncie.</p>
         </div>
         <div id="shop-container" style="display:flex; flex-direction:column; gap:20px; text-align:left;">
             <div class="shop-section">
