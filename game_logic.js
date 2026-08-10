@@ -107,7 +107,7 @@ function updateStatsUI() {
     document.getElementById('stat-fame').innerText = Math.round(gameState.fame) + '%';
     document.getElementById('stat-hype').innerText = Math.round(gameState.hype) + '%';
     document.getElementById('stat-odklejka').innerText = Math.round(gameState.odklejka) + '%';
-    document.getElementById('stat-wena').innerText = Math.round(gameState.wena);
+    document.getElementById('stat-wena').innerText = Math.round(Math.max(0, gameState.wena));
     
     // Nałóg widoczny zawsze
     document.getElementById('stat-addiction-container').style.display = 'flex';
