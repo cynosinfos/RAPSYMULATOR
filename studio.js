@@ -62,10 +62,14 @@ function processRelease(type) {
 
     if (gameState.wena < costs[type].wena) {
         alert("Masz za mało Weny! Odpocznij albo kup coś używkowego w Sklepie.");
+        const allBtns = document.getElementById('action-buttons').querySelectorAll('button');
+        allBtns.forEach(b => b.disabled = false);
         return;
     }
     if (gameState.money < costs[type].money) {
         alert("Nie stać cię na to! (Potrzebujesz " + costs[type].money + " PLN)");
+        const allBtns = document.getElementById('action-buttons').querySelectorAll('button');
+        allBtns.forEach(b => b.disabled = false);
         return;
     }
 
