@@ -216,7 +216,7 @@ function renderEvent(text, options) {
         btn.className = 'btn-action';
         btn.innerHTML = opt.text;
         btn.onclick = () => {
-            const allBtns = actionButtons.querySelectorAll('button');
+            const allBtns = actionContainer.querySelectorAll('button');
             allBtns.forEach(b => b.disabled = true);
             opt.action();
         };
